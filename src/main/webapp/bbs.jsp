@@ -11,10 +11,12 @@
 <body>
   <div align="center">
      <img src="./images/bar.gif" width=450>
-     <h3> bbs.jsp 123 입력화면 </h3>
+     <h3> bbs.jsp 입력화면 </h3>
      <form action="bbsCommit.jsp" method="get">
        제목: <input type=text name="title" value="sky"> <br>
        가격: <input type=text name="price" value="92"> <br>
+       이름: <input type=text name="name" > <br>
+       메일: <input type=text name="email" > <br>
        <input type="submit" value="전 송"> &nbsp;
        <input type="reset" value="취 소">
      </form>

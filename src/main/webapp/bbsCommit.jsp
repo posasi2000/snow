@@ -18,9 +18,13 @@
    	 //request내장객체는 문자열로 전송
    	  Gtitle = request.getParameter("title") ;
    	  Gprice = Integer.parseInt( request.getParameter("price") );
+   	  Gname = request.getParameter("title") ;
+   	  Gemail = request.getParameter("email") ;
    	  out.println("넘어온 제목 " + Gtitle + "<br>") ;
    	  out.println("넘어온 가격 " + Gprice  + "<br>") ;
-   	  
+ 	  out.println("넘어온 이름 " + Gname + "<br>") ;
+   	  out.println("넘어온 메일 " + Gemail  + "<br>") ;
+   	  //1월11일 목요일 다시 추가설명 
    	  //bbsCommit.jsp단독실행하면 에러발생, 단독실행금지 
    	  //insert into test(title,price,wdate) values('cake', 23, now() ); 
    	  //msg="insert into test(title,price,wdate) values('kim', 78, now() )"; 
