@@ -25,8 +25,10 @@
    String Gtitle;
    int Gnum, Gprice, Gtotal;
    java.util.Date  Gwdate;
-    
    String msg = ""; //database=DB인식하는 언어 SQL
+		   
+   String Gname, Gemail ;
+   int Ghit;
  %>
    <h2> </h2>
  <%
