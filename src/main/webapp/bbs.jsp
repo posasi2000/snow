@@ -16,21 +16,22 @@
   function mycheck(){ //함수를 기술후 반드시 호출
 	var mtitle = document.myform.title.value;  //지역변수 
 	if (mtitle =="" || mtitle == null){
-		alert("제목데이터를 입력하세요");
+		//alert("제목데이터를 입력하세요");
+		document.getElementById("title_ch").innerHTML="<font style='color:red'>*제목데이터입력하세요*</font>";
 		document.myform.title.focus();
 		return; //함수탈출 아래문장처리안하고 탈출
 	}else{ document.myform.price.focus(); }
 	
 	var mprice =   document.myform.price.value; //지역변수
 	if(mprice=="" || mprice==null) {
-		alert("가격데이터를 입력하세요");
+		//alert("가격데이터를 입력하세요");
 		document.myform.price.focus();
 		return; //함수탈출 아래문장처리안하고 탈출
 	}else{ document.myform.name.focus(); }
 	
 	var mname =   document.myform.name.value; //지역변수 
 	if(mname=="" || mname==null) {
-		alert("이름데이터를 입력하세요");
+		//alert("이름데이터를 입력하세요");
 		document.myform.name.focus();
 		return; //함수탈출 아래문장처리안하고 탈출
 	}else{ document.myform.email.focus(); }
