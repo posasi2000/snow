@@ -6,6 +6,9 @@
 <title>bbs.jsp</title>
 <style type="text/css">
    h3 {font-size:20pt; font-weight:bold; color:#ff00ff; }
+   /* id접근을 스타일에서 할때 #접근  */
+   #title_ch, #price_ch, #name_ch, #email_ch { margin-left:7px; }
+   div {  margin-left:3px; }
 </style>
 
 <script type="text/javascript">
@@ -47,17 +50,17 @@
 
 </head>  
 <body>
-  <div align="center">
+  <div>
      <img src="./images/bar.gif" width=450>
      <h3> bbs.jsp 입력화면 </h3>
      <form name="myform" action="bbsCommit.jsp" method="get">
-       제목: <input type=text name="title"  id="title"> 
+       제목: <input type=text name="title"  id="title">
             <span  id="title_ch"></span><br>
        가격: <input type=text name="price"  id="price">
             <span  id="price_ch"></span><br> 
        이름: <input type=text name="name"   id="name">
             <span  id="name_ch"></span><br> 
-       메일: <input type=text name="email"  id="email" > 
+       메일: <input type=text name="email"  id="email" >
             <span  id="email_ch"></span><br>
        <input type="button" onclick="mycheck()" value="전송button"> &nbsp;
        <input type="reset" value="취 소">
