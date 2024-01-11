@@ -18,22 +18,20 @@
    	 //request내장객체는 문자열로 전송
    	  Gtitle = request.getParameter("title") ;
    	  Gprice = Integer.parseInt( request.getParameter("price") );
-   	  Gname = request.getParameter("title") ;
+   	  Gname = request.getParameter("name") ;
    	  Gemail = request.getParameter("email") ;
-   	  out.println("넘어온 제목 " + Gtitle + "<br>") ;
-   	  out.println("넘어온 가격 " + Gprice  + "<br>") ;
- 	  out.println("넘어온 이름 " + Gname + "<br>") ;
-   	  out.println("넘어온 메일 " + Gemail  + "<br>") ;
-   	  //1월11일 목요일 다시 추가설명 
-   	  //bbsCommit.jsp단독실행하면 에러발생, 단독실행금지 
-   	  //insert into test(title,price,wdate) values('cake', 23, now() ); 
-   	  //msg="insert into test(title,price,wdate) values('kim', 78, now() )"; 
-   	  msg="insert into test(title,price,wdate) values('" + Gtitle + "', "+ Gprice + ", now() )"; 
+   	  
+   	  System.out.println("\nbbsCommit.jsp 저장처리문서");
+   	  System.out.println("넘어온 제목 " + Gtitle + "<br>") ;
+   	  System.out.println("넘어온 가격 " + Gprice  + "<br>") ;
+   	  System.out.println("넘어온 이름 " + Gname + "<br>") ;
+   	  System.out.println("넘어온 메일 " + Gemail  + "<br>") ;
+   	  //msg="insert into test(title,price,wdate,name,email,hit) values('" + Gtitle + "', "+ Gprice + ", now(), 'kim', 'aa@kt.org', 0 )";
+   	  msg="insert into test(title,price,wdate,name,email,hit) values('" + Gtitle + "', "+ Gprice + ", now(), '"+ Gname + "', '" + Gemail +"', 0 )";      
    	  System.out.println( msg );
    	  out.println( msg );
    	  
    	  //DB드라이브연결성공, DB서버 포트/계정/비번  연결성공이면 
-   	  //명령어생성 ST생성
 	  ST = CN.createStatement(); //명령어생성 ST생성
    	  int ok=ST.executeUpdate(msg); //쿼리명령어진짜 실행처리 
    	  if (ok>0) {
