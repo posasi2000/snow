@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>bbs.jsp</title>
+<title>bbsWrite.jsp</title>
 <style type="text/css">
    h3 {font-size:20pt; font-weight:bold; color:#ff00ff; }
 </style>
@@ -27,14 +27,13 @@
 <body>
   <div align="center">
      <img src="./images/bar.gif" width=450>
-     <h3> bbs.jsp 입력화면 </h3>
+     <h3> bbsWrite.jsp 입력화면 </h3>
      <form name="myform" action="bbsCommit.jsp" method="get">
-       제목: <input type=text name="title"  id="title"> 
-            <span  id="title_ch"></span> <br>
-       가격: <input type=text name="price"  id="price"> <br>
-       이름: <input type=text name="name"   id="name"> <br>
-       메일: <input type=text name="email"  id="email" > <br>
-       <input type="button" onclick="mycheck()" value="전송button"> &nbsp;
+       제목: <input type=text name="title" > <br>
+       가격: <input type=text name="price" > <br>
+       이름: <input type=text name="name"  value="lee"> <br>
+       메일: <input type=text name="email"  value="su@kt.org"> <br>
+       <input type="submit" value="전송submit"> &nbsp;
        <input type="reset" value="취 소">
      </form>
      
