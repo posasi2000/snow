@@ -60,13 +60,17 @@
 		}else{document.getElementById("email_ch").innerHTML=""; }
 	}
 	
+	if(myflag == false){
+		alert("아이디 이름중복체크 버튼을 클릭하세요");
+		return ; 
+	}
 	//input type=submit역할 = document.myform.submit();
-	//document.myform.submit(); //저장확인 bbsCommit.jsp문서 이동성공 확인후 주석 
+	document.myform.submit(); //저장확인 bbsCommit.jsp문서 이동성공 확인후 주석 
   }//end
   
   
   function info(){
-	  //myflag=true;
+	  myflag=true;//전역변수
 	  var data = myform.name.value;
 	  if(data=="" || data==null){
 		 alert("이름데이터가 공백입니다\n이름데이터를 입력하세요");
