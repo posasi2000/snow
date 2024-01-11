@@ -7,16 +7,26 @@
 <meta charset="utf-8">
 <title>bbsList.jsp</title>
 <style type="text/css">
-  *{ font-size:20pt; }
+  *{ font-size:16pt; }
 </style>
 
 </head>
 <body>
+<%
+ ST = CN.createStatement();
+ RS = ST.executeQuery("select count(*) cnt from test ");
+ if (RS.next()==true){ Gtotal = RS.getInt("cnt"); }
+%>
+
  <div align="center">
      <img src="./images/main_4.jpg" width=350 height=150>
      <h4> bbsList.jsp화면 단독실행 </h4>
  
-<table width=1000 border=1 cellspacing=0 style="margin-left: auto; margin-right: auto;">  
+<table width=1000 border=1 cellspacing=0 style="margin-left: auto; margin-right: auto;">
+  <tr align="right">
+    <td colspan="4">  전체레코드갯수: <%= Gtotal %> &nbsp; </td>
+  </tr> 
+   
   <tr bgcolor="#abcdef">
   	<th> num </th> <th>제 목</th> <th> 가 격 </th> <th> 날 짜 </th>
   </tr> 

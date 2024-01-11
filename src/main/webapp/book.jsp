@@ -19,6 +19,7 @@
        #title_ch, #email_ch{ margin-left: 55px; }
    </style>
    
+   
  <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
     
  <script type="text/javascript">
@@ -82,7 +83,7 @@
  		   myform.sabun.focus();
  		   return false;
  		  }
- 		open("openID.jsp?Gidx="+data, "bc", "width=500,height=150,left=700,top=300"); 
+ 		window.open("openID.jsp?Gidx="+data, "bc", "width=500,height=150,left=700,top=300"); 
  	}//end====================================================
  		
  	//다음우편번호
@@ -145,7 +146,7 @@
    	     <input type=button value="우편변호" onclick="execDaumPostcode();">
    	   <br>
    	  주소:<input type=text name="juso1"  id="juso1"> <br>
-   	  상세:<input type=text name="juso2"  id="juso2" value="셩결관 303호"> <br>
+   	  상세:<input type=text name="juso2"  id="juso2" value="성결관 303호"> <br>
    	  파일:<input type=file name="file"> <p>
    	  <input type="button"  onclick="check();" value="버튼확인">
    	  <input type="reset" value="입력취소">

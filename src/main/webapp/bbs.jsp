@@ -17,7 +17,7 @@
        가격: <input type=text name="price" value="27"> <br>
        이름: <input type=text name="name"  value="kim"> <br>
        메일: <input type=text name="email"  value="su@kt.org"> <br>
-       <input type="submit" value="전 송"> &nbsp;
+       <input type="submit" value="전송submit"> &nbsp;
        <input type="reset" value="취 소">
      </form>
      
