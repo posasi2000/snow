@@ -45,11 +45,15 @@
 	
 	var memail = document.myform.email.value; //지역변수 
 	if(memail=="" || memail==null) {
-		//alert("이름데이터를 입력하세요");
-		document.getElementById("email_ch").innerHTML="<font style='color:red'>*메일데이터입력하세요*</font>";
-		document.myform.email.focus();
-		return; //함수탈출 아래문장처리안하고 탈출
-	}else{ document.myform.email.focus();  document.getElementById("email_ch").innerHTML="";}
+	   //alert("이름데이터를 입력하세요");
+	   document.getElementById("email_ch").innerHTML="<font style='color:red'>*메일데이터입력하세요*</font>";
+	   document.myform.email.focus();
+	   return; //함수탈출 아래문장처리안하고 탈출
+	}else{   
+	  //document.getElementById("email_ch").innerHTML="";
+	  //var mail_reg="/^()@().()$/";
+	  var mail_reg="/^()@().()$/";
+	}
 	
 	//input type=submit역할 = document.myform.submit();
 	//document.myform.submit(); //저장확인 bbsCommit.jsp문서 이동성공 확인후 주석 
@@ -76,7 +80,7 @@
      </form>
      
      <p>
-   	 <a href="index.jsp">index</a>
+   	 <a href="index.html">index</a>
    	 <a href="bbs.jsp">글쓰기</a>
    	 <a href="bbsList.jsp">전체출력</a>
   </div>

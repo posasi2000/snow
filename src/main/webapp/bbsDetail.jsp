@@ -58,7 +58,7 @@
  
   <tr align="center">
    <td colspan="2" height=50 >
-       <a href="index.jsp">[index]</a>
+       <a href="index.html">index</a>
        <a href="bbsUpdate.jsp?idx=<%= Gnum %>">[수정]</a>
   	   <a href="bbsList.jsp">[전체출력]</a>
   	   <a href="bbsDelete.jsp?idx=<%= Gnum %>">[삭제]</a>

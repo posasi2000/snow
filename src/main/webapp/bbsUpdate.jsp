@@ -38,7 +38,7 @@
      </form>
      
     <p>
- 	<a href="index.jsp">index</a>
+ 	<a href="index.html">index</a>
  	<a href="bbs.jsp">글쓰기</a>
  	<a href="bbsList.jsp">전체출력</a>
   </div>

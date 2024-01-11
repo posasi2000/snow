@@ -41,7 +41,7 @@
   	 
    
    	 <p>
-   	 <a href="index.jsp">index</a>
+   	 <a href="index.html">index</a>
    	 <a href="bbs.jsp">글쓰기</a>
    	 <a href="bbsList.jsp">게시판</a>
   </div>

@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>index.jsp</title>
+<title>main.jsp</title>
 <style type="text/css">
    h3 {font-size:20pt; font-weight:bold; color:#ff00ff; }
 </style>
