@@ -1,9 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="utf-8">
 <title> </title>
 	<style type="text/css">
 	  * {font-size: 14pt; font-weight: bold; }
@@ -20,15 +19,15 @@
 <body bgcolor="yellow" onload="first();">
  <%
   String data=request.getParameter("Gidx");
-  System.out.println("openID.jap¹®¼­·Î ³Ñ¾î¿Â Áßº¹Ã¼Å©»ç¹ø=" + data);
+  System.out.println("bbsID.javaë¬¸ì„œë¡œ ë„˜ì–´ì˜¨ ì¤‘ë³µì²´í¬ì‚¬ë²ˆ=" + data);
  %>
 
 	<!-- openID.jsp -->
 	<div align="center">
 	 <img src="./images/bar.gif" width=400> <br>
 	  <form  name="subform">
-		¾ÆÀÌµğ:<input type=text name=userid value=<%=data%>>
-			 <input type="submit" value="Áßº¹È®ÀÎ">
+		ì•„ì´ë””:<input type=text name=userid value=<%=data%>>
+			 <input type="submit" value="ì¤‘ë³µí™•ì¸">
 	  </form>		 
 	  <img src="./images/bar.gif" width=400>
 	</div>

@@ -18,6 +18,14 @@
   var mymessage = "안내문"; //전역변수=멤버변수=global
   
   function mycheck(){ //함수를 기술후 반드시 호출
+	var mname = document.myform.name.value; //지역변수 
+	if(mname=="" || mname==null) {
+		//alert("이름데이터를 입력하세요");
+		document.getElementById("name_ch").innerHTML="<font style='color:red'>*이름데이터입력하세요*</font>";
+		document.myform.name.focus();
+		return; //함수탈출 아래문장처리안하고 탈출
+	}else{ document.myform.title.focus(); document.getElementById("name_ch").innerHTML=""; }
+	   
 	var mtitle = document.myform.title.value;  //지역변수 
 	if (mtitle =="" || mtitle == null){
 		//alert("제목데이터를 입력하세요");
@@ -32,15 +40,7 @@
 		document.getElementById("price_ch").innerHTML="<font style='color:red'>*가격데이터입력하세요*</font>";
 		document.myform.price.focus();
 		return; //함수탈출 아래문장처리안하고 탈출
-	}else{ document.myform.name.focus(); document.getElementById("price_ch").innerHTML=""; }
-	
-	var mname = document.myform.name.value; //지역변수 
-	if(mname=="" || mname==null) {
-		//alert("이름데이터를 입력하세요");
-		document.getElementById("name_ch").innerHTML="<font style='color:red'>*이름데이터입력하세요*</font>";
-		document.myform.name.focus();
-		return; //함수탈출 아래문장처리안하고 탈출
-	}else{ document.myform.email.focus(); document.getElementById("name_ch").innerHTML=""; }
+	}else{ document.myform.email.focus(); document.getElementById("price_ch").innerHTML=""; }
 	
 	
 	var memail = document.myform.email.value; //지역변수 
@@ -52,9 +52,8 @@
 	}else{   
 		//document.getElementById("email_ch").innerHTML="";
 		//var mail_reg="/^()@().()$/";
-		var mail_reg="/^([a-z0-9]{2,10})@([a-z]{2,10})\.([a-z]{2,5})$/";
-		if(mail_reg.test(memail)==false){ //체크함수test()
-		  alert("메일체크 if~~~");
+		var mail_reg=/^([a-z0-9]{2,10})@([a-z]{2,10})\.([a-z]{2,5})$/
+		if(mail_reg.test(memail)==false){ //체크함수test( )
 		 document.getElementById("email_ch").innerHTML="<font style='color:red'>*sky@nate.com형식*</font>";
 		 document.myform.email.value = "";
 		 document.myform.email.focus();
@@ -64,8 +63,19 @@
 	//input type=submit역할 = document.myform.submit();
 	//document.myform.submit(); //저장확인 bbsCommit.jsp문서 이동성공 확인후 주석 
   }//end
+  
+  
+  function info(){
+	  //myflag=true;
+	  var data = myform.name.value;
+	  if(data=="" || data==null){
+		 alert("이름데이터가 공백입니다\n이름데이터를 입력하세요");
+		 myform.name.focus();
+		 return ; //함수탈출
+	  }
+	  window.open("bbsID.jsp?Gidx="+data ,"ab", "width=500,height=150,top=100");
+  }//end
 </script>
-
 
 </head>  
 <body>
@@ -73,13 +83,14 @@
      <img src="./images/bar.gif" width=450>
      <h3> bbs.jsp 입력화면 </h3>
      <form name="myform" action="bbsCommit.jsp" method="get">
-       제목: <input type=text name="title"  id="title">
+       이름: <input type=text name="name"   id="name" size=10>
+            <span  id="name_ch"></span><input type=button value="중복체크" onclick="info()"><br> 
+          
+       제목: <input type=text name="title"  id="title" value="note">
             <span  id="title_ch"></span><br>
-       가격: <input type=text name="price"  id="price">
-            <span  id="price_ch"></span><br> 
-       이름: <input type=text name="name"   id="name">
-            <span  id="name_ch"></span><br> 
-       메일: <input type=text name="email"  id="email" >
+       가격: <input type=text name="price"  id="price" value="23">
+            <span  id="price_ch"></span><br>   
+       메일: <input type=text name="email"  id="email"  value="kim@sku.org">
             <span  id="email_ch"></span><br>
        <input type="button" onclick="mycheck()" value="전송button"> &nbsp;
        <input type="reset" value="취 소">
