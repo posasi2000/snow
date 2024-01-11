@@ -5,6 +5,7 @@
 <meta charset="utf-8">
 <title>bbs.jsp</title>
 <style type="text/css">
+   * {font-size:14pt; font-weight:bold;}
    h3 {font-size:20pt; font-weight:bold; color:#ff00ff; }
    /* id접근을 스타일에서 할때 #접근  */
    #title_ch, #price_ch, #name_ch, #email_ch { margin-left:7px; }
@@ -23,24 +24,32 @@
 		document.getElementById("title_ch").innerHTML="<font style='color:red'>*제목데이터입력하세요*</font>";
 		document.myform.title.focus();
 		return; //함수탈출 아래문장처리안하고 탈출
-	}else{ document.myform.price.focus(); }
+	}else{ document.myform.price.focus(); document.getElementById("title_ch").innerHTML=""; }
 	
-	var mprice =   document.myform.price.value; //지역변수
+	var mprice = document.myform.price.value; //지역변수
 	if(mprice=="" || mprice==null) {
 		//alert("가격데이터를 입력하세요");
+		document.getElementById("price_ch").innerHTML="<font style='color:red'>*가격데이터입력하세요*</font>";
 		document.myform.price.focus();
 		return; //함수탈출 아래문장처리안하고 탈출
-	}else{ document.myform.name.focus(); }
+	}else{ document.myform.name.focus(); document.getElementById("price_ch").innerHTML=""; }
 	
-	var mname =   document.myform.name.value; //지역변수 
+	var mname = document.myform.name.value; //지역변수 
 	if(mname=="" || mname==null) {
 		//alert("이름데이터를 입력하세요");
+		document.getElementById("name_ch").innerHTML="<font style='color:red'>*이름데이터입력하세요*</font>";
 		document.myform.name.focus();
 		return; //함수탈출 아래문장처리안하고 탈출
-	}else{ document.myform.email.focus(); }
+	}else{ document.myform.email.focus(); document.getElementById("name_ch").innerHTML=""; }
 	
 	
-	var memail =   document.myform.email.value; //지역변수 
+	var memail = document.myform.email.value; //지역변수 
+	if(memail=="" || memail==null) {
+		//alert("이름데이터를 입력하세요");
+		document.getElementById("email_ch").innerHTML="<font style='color:red'>*메일데이터입력하세요*</font>";
+		document.myform.email.focus();
+		return; //함수탈출 아래문장처리안하고 탈출
+	}else{ document.myform.email.focus();  document.getElementById("email_ch").innerHTML="";}
 	
 	//input type=submit역할 = document.myform.submit();
 	//document.myform.submit(); //저장확인 bbsCommit.jsp문서 이동성공 확인후 주석 
