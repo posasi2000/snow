@@ -21,34 +21,36 @@
    	  Gname = request.getParameter("name") ;
    	  Gemail = request.getParameter("email") ;
    	  
-   	  System.out.println("\nbbsCommit.jsp 저장처리문서");
-   	  System.out.println("넘어온 제목 " + Gtitle + "<br>") ;
-   	  System.out.println("넘어온 가격 " + Gprice  + "<br>") ;
-   	  System.out.println("넘어온 이름 " + Gname + "<br>") ;
-   	  System.out.println("넘어온 메일 " + Gemail  + "<br>") ;
-   	  //msg="insert into test(title,price,wdate,name,email,hit) values('" + Gtitle + "', "+ Gprice + ", now(), 'kim', 'aa@kt.org', 0 )";
-   	  msg="insert into test(title,price,wdate,name,email,hit) values('" + Gtitle + "', "+ Gprice + ", now(), '"+ Gname + "', '" + Gemail +"', 0 )";      
-   	  System.out.println( msg );
-   	  out.println( msg );
-   	  
-   	  //DB드라이브연결성공, DB서버 포트/계정/비번  연결성공이면 
-	  ST = CN.createStatement(); //명령어생성 ST생성
-   	  int ok=ST.executeUpdate(msg); //쿼리명령어진짜 실행처리 
+   	  System.out.println("넘어온 제목 " + Gtitle ) ;
+   	  System.out.println("넘어온 가격 " + Gprice ) ;
+   	  System.out.println("넘어온 이름 " + Gname ) ;
+   	  System.out.println("넘어온 메일 " + Gemail ) ;
+   	  System.out.println("bbsCommit.jsp 저장처리문서");
+   	  //mysql msg="insert into test(title,price,wdate,name,email,hit) values('" + Gtitle + "', "+ Gprice + ", now(), 'kim', 'aa@kt.org', 0 )";
+   	  //ST적용 msg="insert into test(title,price,wdate,name,email,hit) values('" + Gtitle + "', "+ Gprice + ", now(), '"+ Gname + "', '" + Gemail +"', 0 )";
+   	  msg="insert into test(title,price,wdate,name,email,hit) values(?, ?, now(), ?, ?, 0)";
+   	  System.out.println("저장 " + msg );
+   	 
+   	  PST = CN.prepareStatement(msg);
+   	    PST.setString(1, Gtitle);
+   	    PST.setInt(2, Gprice);
+   	    PST.setString(3, Gname);
+   	    PST.setString(4, Gemail);
+   	  int ok = PST.executeUpdate();
    	  if (ok>0) {
-   		System.out.println("test테이블저장 성공");
-   		out.println("test테이블저장 성공");
+   		System.out.println("저장 PST test테이블 성공\n");
    		response.sendRedirect("bbsList.jsp");
    	  }else{ 
-   		System.out.println("test테이블저장 실패");
+   		System.out.println("저장 PST test테이블 실패");
    		response.sendRedirect("index.jsp");
    	  }
    	 %>
    	 
    
-   	 <p>
-   	 <a href="index.jsp">index</a>
-   	 <a href="bbs.jsp">글쓰기</a>
-   	 <a href="#">게시판</a>
+   <p>
+   <a href="index.jsp">index</a>
+   <a href="bbs.jsp">글쓰기</a>
+   <a href="bbsList.jsp">전체출력</a>
   </div>
 </body>
 </html>
