@@ -50,9 +50,15 @@
 	   document.myform.email.focus();
 	   return; //함수탈출 아래문장처리안하고 탈출
 	}else{   
-	  //document.getElementById("email_ch").innerHTML="";
-	  //var mail_reg="/^()@().()$/";
-	  var mail_reg="/^()@().()$/";
+		//document.getElementById("email_ch").innerHTML="";
+		//var mail_reg="/^()@().()$/";
+		var mail_reg="/^([a-z0-9]{2,10})@([a-z]{2,10})\.([a-z]{2,5})$/";
+		if(mail_reg.test(memail)==false){ //체크함수test()
+		  alert("메일체크 if~~~");
+		 document.getElementById("email_ch").innerHTML="<font style='color:red'>*sky@nate.com형식*</font>";
+		 document.myform.email.value = "";
+		 document.myform.email.focus();
+		}else{document.getElementById("email_ch").innerHTML=""; }
 	}
 	
 	//input type=submit역할 = document.myform.submit();
