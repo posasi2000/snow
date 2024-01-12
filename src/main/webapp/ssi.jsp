@@ -23,7 +23,7 @@
   ResultSet RS; //select조회한결과 RS=ST.executeQuery("select~~")
  
    String Gtitle;
-   int Gnum, Gprice, Gtotal;
+   int Gnum, Gprice, Gtotal, GStotal ;
    java.util.Date  Gwdate;
    String msg = ""; //database=DB인식하는 언어 SQL
 		   
