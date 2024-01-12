@@ -65,7 +65,7 @@
 		return ; 
 	}
 	//input type=submit역할 = document.myform.submit();
-	document.myform.submit(); //저장확인 bbsCommit.jsp문서 이동성공 확인후 주석 
+	//document.myform.submit(); //저장확인 bbsCommit.jsp문서 이동성공 확인후 주석 
   }//end
   
   
