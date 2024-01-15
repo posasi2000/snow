@@ -62,9 +62,9 @@
  end = 10 ; 
 
  
- //두번째문제2] Gtotal총레코드데이터갯수  316, pagecount총페이지수 32페이지
- if(Gtotal%10==0){ pagecount=Gtotal/10; }
- else{ pagecount=(Gtotal/10)+1; }
+ //두번째문제2] GStotal총레코드데이터갯수 00, pagecount총페이지수 32페이지
+ if(GStotal%10==0){ pagecount=GStotal/10; }
+ else{ pagecount=(GStotal/10)+1; }
  System.out.println("총데이터수: " + Gtotal +"   총페이지수: " + pagecount);
 
  //세번째문제3] 
@@ -92,8 +92,10 @@
   </tr> 
 <%
   //msg="select * from  test ";
-  msg="select * from  test limit " + start + ", " + end ;
+  //msg="select * from  test limit " + start + ", " + end ;
+  msg="select * from  test  where "+ skey + " like '%"+ sval + "%'  limit " + start + ", " + end ;
   System.out.println("\n전체 " +  msg );
+  
 	  
   ST = CN.createStatement(); //명령어생성 ST생성
   RS = ST.executeQuery(msg); //RS는 조회한 결과데이터 전체기억 
@@ -126,7 +128,7 @@
     	if(i==pageNUM){
     	 out.println("<font style='font-size:20pt; color:red'><b>["+i+"]</b></font>");	
     	}else{
-    	 out.println("<a href=bbsList.jsp?page="+i+">["+i+"]</a>");
+    	 out.println("<a href=bbsList.jsp?page="+i+returnpage+">["+i+"]</a>");
     	}
     }//for end
    
